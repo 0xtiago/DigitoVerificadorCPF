@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 lista = []
+lista2 = []
 rangeDigito1 = []
 rangeDigito2 = []
 resultadoMultiplicacao = []
+resultadoMultiplicacao2 = []
 primeiroDigito = 0
 segundoDigito = 0
 
@@ -28,34 +30,35 @@ def caculoPrimeiroDigito(cpf):
         primeiroDigito =  primeiroDigito + resultadoMultiplicacao[i]
     if primeiroDigito % 11 < 2:
         primeiroDigito = 0
-    primeiroDigito = 11 - (primeiroDigito % 11)
+    else:
+        primeiroDigito = 11 - (primeiroDigito % 11)
 
 
 
 def caculoSegundoDigito(cpf):
     global segundoDigito
     #Adiciona todos os números em uma lista para o calculo
-    for numero in cpf:
-        lista.append(int(numero))
-    
+    for numero2 in cpf:
+        lista2.append(int(numero2))
+
     #Adiciona o primeiro digito verificador ao final da lista
-    lista.append(int(primeiroDigito))
+    lista2.append(int(primeiroDigito))
     
     #Cria range de 11 a 2 e insere em uma lista
-    for numeroRange in range(11,1,-1):
-        rangeDigito2.append(numeroRange)
+    for numeroRange2 in range(11,1,-1):
+        rangeDigito2.append(numeroRange2)
     
     #Cria lista de resultado de multiplicação
-    for i in range(0, len(lista)):
-        resultadoMultiplicacao.append(lista[i] * rangeDigito2[i])
+    for y in range(0, len(lista2)):
+        resultadoMultiplicacao2.append(lista2[y] * rangeDigito2[y])
     
     #Soma todos os numeros, divide por 11, e verifica quociente
-    for i in range (0,len(resultadoMultiplicacao)):
-        segundoDigito =  segundoDigito + resultadoMultiplicacao[i]
+    for x in range (0,len(resultadoMultiplicacao2)):
+        segundoDigito =  segundoDigito + resultadoMultiplicacao2[x]
     if segundoDigito % 11 < 2:
         segundoDigito = 0
-    segundoDigito = 11 - (segundoDigito % 11)
-
+    else:
+        segundoDigito = 11 - (segundoDigito % 11)
 
 
 caculoPrimeiroDigito(cpf)
@@ -65,8 +68,12 @@ print (lista)
 print (rangeDigito1)
 print (resultadoMultiplicacao)
 print (primeiroDigito)
+print (lista2)
+print (rangeDigito2)
+print (resultadoMultiplicacao2)
 print (segundoDigito)
-    
+
+print("O número do CPF digitado com os digitos verificadores é: " + cpf + "-" + str(primeiroDigito) + str(segundoDigito))
 
 
 
