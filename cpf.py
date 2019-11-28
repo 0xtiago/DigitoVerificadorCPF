@@ -64,6 +64,7 @@ def caculoSegundoDigito(cpf):
 caculoPrimeiroDigito(cpf)
 caculoSegundoDigito (cpf)
 
+'''
 print (lista)
 print (rangeDigito1)
 print (resultadoMultiplicacao)
@@ -72,7 +73,7 @@ print (lista2)
 print (rangeDigito2)
 print (resultadoMultiplicacao2)
 print (segundoDigito)
-
+'''
 print("O número do CPF digitado com os digitos verificadores é: " + cpf + "-" + str(primeiroDigito) + str(segundoDigito))
 
 
